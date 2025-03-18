@@ -1,0 +1,385 @@
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/profile_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".ProfilePage"
+        android:orientation="vertical"
+        android:background="#141617">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/backbutton_icon"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <!-- Background Header -->
+        <ImageView
+            android:id="@+id/background_holder"
+            android:layout_width="350dp"
+            android:layout_height="125dp"
+            android:src="@drawable/rectangle"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/back_button"/>
+
+        <!-- Profile Icon -->
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="159dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/profile_icon"
+            android:background="@drawable/circle"/>
+
+        <!-- Name Text -->
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/background_holder"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_boldcondensed" />
+
+        <!-- Editable Name -->
+        <EditText
+            android:id="@+id/name_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:visibility="gone"
+            android:layout_below="@id/background_holder"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            android:hint="Enter name"
+            android:background="@null"
+            android:fontFamily="@font/roboto_boldcondensed"
+            android:textColorHint="#808080"
+            android:textColor="@color/white"/>
+
+        <!-- Email Text -->
+        <TextView
+            android:id="@+id/email_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/name_text"
+            android:layout_marginLeft="150dp"
+            android:fontFamily="@font/roboto_regular" />
+
+        <!-- Editable Email -->
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:visibility="gone"
+            android:layout_below="@id/name_edit"
+            android:layout_marginLeft="150dp"
+            android:hint="Enter email"
+            android:background="@null"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/roboto_regular"
+            android:textColorHint="#808080"
+            android:textColor="@color/white"/>
+
+        <!-- Bio Label -->
+        <TextView
+            android:id="@+id/bio_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bio"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/profile_icon"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_boldcondensed" />
+
+        <!-- Bio Text -->
+        <TextView
+            android:id="@+id/profile_bio"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/bio_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="Enter bio here"
+            android:textColorHint="#808080"/>
+
+        <!-- Edit Profile Button -->
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Edit Profile"
+            android:textSize="13sp"
+            android:layout_below="@id/profile_bio"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_rounded"
+            android:fontFamily="@font/roboto_condensed"
+            android:textAllCaps="false" />
+
+        <!-- Update Button -->
+        <Button
+            android:id="@+id/update_button"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Update"
+            android:textSize="13sp"
+            android:visibility="gone"
+            android:layout_below="@id/bio_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_rounded"
+            android:fontFamily="@font/roboto_condensed"
+            android:textAllCaps="false" />
+
+        <!-- Editable Bio -->
+        <EditText
+            android:id="@+id/bio_edit"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:layout_below="@id/bio_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:hint="Enter bio here"
+            android:textColorHint="#808080"
+            android:background="@null"
+            android:inputType="textMultiLine"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/white"/>
+
+        <!--Movie Rating Label-->
+        <TextView
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie Ratings"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_boldcondensed"
+            android:textSize="20sp"
+            android:layout_below="@id/profile_icon"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="170dp"/>
+
+        <!--Movies-->
+        <LinearLayout
+            android:id="@+id/movies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/movie_rating">
+
+            <LinearLayout
+                android:id="@+id/movie_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:id="@+id/movie_placeholder1"
+                    android:layout_width="100dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/rectangle"/>
+
+                <TextView
+                    android:id="@+id/movie_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movie Name"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_boldcondensed"
+                    android:textSize="15sp"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:id="@+id/star_container1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movie_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:id="@+id/movie_placeholder2"
+                    android:layout_width="100dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/rectangle"/>
+
+                <TextView
+                    android:id="@+id/movie_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movie Name"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_boldcondensed"
+                    android:textSize="15sp"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:id="@+id/star_container2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movie_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/movie_placeholder3"
+                    android:layout_width="100dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/rectangle"/>
+
+                <TextView
+                    android:id="@+id/movie_name3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movie Name"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_boldcondensed"
+                    android:textSize="15sp"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:id="@+id/star_container3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:layout_marginEnd="5dp"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_below="@id/movies"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"/>
+    </RelativeLayout>
+</ScrollView>

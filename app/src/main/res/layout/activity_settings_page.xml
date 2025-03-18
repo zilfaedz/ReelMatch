@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsPage"
+    android:background="#141617"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/backbutton_icon"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:text="Settings"
+        android:textSize="30sp"
+        android:fontFamily="@font/roboto_boldcondensed"/>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/button_rounded"
+        android:layout_gravity="center"
+        android:backgroundTint="#121e2a"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="General"
+            android:fontFamily="@font/roboto_condensed"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start">
+
+            <Button
+                android:id="@+id/settings_profileicon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/settings_profileicon"
+                android:layout_gravity="center"
+                android:paddingTop="4dp"/>
+
+            <Button
+                android:id="@+id/profile"
+                android:layout_width="270dp"
+                android:layout_height="40dp"
+                android:text="Profile"
+                android:textSize="19sp"
+                android:textColor="#ffffff"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/roboto_boldcondensed"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/toProfile_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/settings_backicon"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/button_rounded"
+        android:layout_gravity="center"
+        android:backgroundTint="#121e2a"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="More"
+            android:fontFamily="@font/roboto_condensed"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start">
+
+            <Button
+                android:id="@+id/settings_teamicon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/settings_teamicon"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp"/>
+
+            <Button
+                android:id="@+id/about_the_team"
+                android:layout_width="263dp"
+                android:layout_height="40dp"
+                android:text="About the Team"
+                android:textSize="19sp"
+                android:textColor="#ffffff"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/roboto_boldcondensed"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/toDevelopers_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/settings_backicon" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/log_out_confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/button_rounded"
+        android:layout_gravity="center"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:textColor="#121e2a"
+            android:text="Are you sure you want to log out?"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/roboto_boldcondensed"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/yes_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:background="@drawable/rectangle_developers_icon"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_condensed"/>
+
+            <Button
+                android:id="@+id/no_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="No"
+                android:background="@drawable/rectangle_developers_icon"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_condensed"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:paddingVertical="60dp">
+
+        <Button
+            android:id="@+id/log_out"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:textColor="#121e2a"
+            android:text="Log out"
+            android:layout_gravity="bottom"
+            android:background="@drawable/button_rounded"
+            android:fontFamily="@font/roboto_boldcondensed"/>
+    </LinearLayout>
+</LinearLayout>

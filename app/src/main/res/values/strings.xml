@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ReelMatch</string>
+    <string name="description1">We are second-year Information Technology students from Cebu Institute of Technology - University, united by our passion for movies, storytelling, and technology. Inspired by our love for cinema, we developed ReelMatch, an app designed to simplify movie discovery by recommending films based on user preferences, viewing history, and ratings.</string>
+    <string name="description2">Our goal is to create an engaging and seamless experience that helps users find the perfect movie without the hassle of endless scrolling. Through this project, we showcase our dedication to blending technology and storytelling, making entertainment more accessible and enjoyable.</string>
+</resources>
