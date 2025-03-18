@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ReelMatch"
         tools:targetApi="34">
         <activity
+            android:name=".ProfileSettingsPage"
+            android:exported="false" />
+        <activity
             android:name=".SignupPage"
             android:exported="false" />
         <activity
