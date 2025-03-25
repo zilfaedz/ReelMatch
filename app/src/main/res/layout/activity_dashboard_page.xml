@@ -1,44 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardPage"
-    android:background="@color/black">
+    android:backgroundTint="@color/blackish">
 
-    <ImageView
-        android:id="@+id/logo_icon"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal = "true"
-        android:src="@drawable/reelmatch_icon"/>
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        android:fillViewport="true">
 
-    <Button
-        android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo_icon"
-        android:layout_centerHorizontal="true"
-        android:text="Profile Page"
-        android:textAllCaps="false"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/developers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile"
-        android:layout_centerHorizontal="true"
-        android:text="Developers Page"
-        android:textAllCaps="false"/>
+            <!-- Logo and Search Bar -->
+            <LinearLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="25dp"
+                android:paddingBottom="20dp">
 
-    <Button
-        android:id="@+id/settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/developers"
-        android:layout_centerHorizontal="true"
-        android:text="Settings Page"
-        android:textAllCaps="false"/>
-</RelativeLayout>
+                <ImageView
+                    android:id="@+id/logo_icon"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/reelmatch_icon"/>
+
+                <EditText
+                    android:id="@+id/searchbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:hint="Search"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:background="@drawable/searchbarshape"
+                    android:drawableStart="@drawable/magnifying_icon"
+                    android:drawablePadding="7dp"/>
+            </LinearLayout>
+
+            <!-- Horizontal ScrollView Category Bar -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:clipToPadding="false"
+                android:clipChildren="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_foryou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="For you"
+                        android:background="@drawable/button_selector"
+                        android:textColor="@drawable/button_selector_text"
+                        android:layout_marginStart="25dp"
+                        android:padding="10dp"/>
+
+                    <Button
+                        android:id="@+id/btn_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Popular"
+                        android:background="@drawable/button_selector"
+                        android:textColor="@drawable/button_selector_text"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"/>
+
+                    <Button
+                        android:id="@+id/btn_movies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Movies"
+                        android:background="@drawable/button_selector"
+                        android:textColor="@drawable/button_selector_text"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"/>
+
+                    <Button
+                        android:id="@+id/btn_documentaries"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Documentaries"
+                        android:background="@drawable/button_selector"
+                        android:textColor="@drawable/button_selector_text"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"/>
+
+                    <Button
+                        android:id="@+id/btn_anime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anime"
+                        android:background="@drawable/button_selector"
+                        android:textColor="@drawable/button_selector_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="25dp"
+                        android:padding="10dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Buttons Below Content -->
+            <LinearLayout
+                android:id="@+id/main2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="50dp">
+
+                <Button
+                    android:id="@+id/profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Page"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/developers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developers Page"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings Page"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation (Fixed) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/black"
+        android:elevation="10dp"
+        app:menu="@menu/bottom_menu"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        app:itemIconSize="30dp"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

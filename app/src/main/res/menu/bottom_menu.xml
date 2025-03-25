@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/button_home"
+        android:title="Home"
+        android:icon="@drawable/home_icon"/>
+    <item
+        android:id="@+id/button_profile"
+        android:title="Profile"
+        android:icon="@drawable/profile_iconbutton"/>
+    <item
+        android:id="@+id/button_settings"
+        android:title="Settings"
+        android:icon="@drawable/settings_icon"/>
+    <item
+        android:id="@+id/button_developers"
+        android:title="Developers"
+        android:icon="@drawable/developers_iconbutton"/>
+</menu>

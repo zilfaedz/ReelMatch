@@ -1,0 +1,48 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color (Darker Gray) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#222222" /> <!-- Dark Gray -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Left shadow -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="180"
+                android:centerColor="#00141617"
+                android:centerX="0.9"
+                android:endColor="#50141617"
+                android:startColor="#00141617" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Right shadow -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="360"
+                android:centerColor="#00141617"
+                android:centerX="0.9"
+                android:endColor="#50141617"
+                android:startColor="#00141617" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Top shadow -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:centerColor="#00141617"
+                android:centerY="0.2"
+                android:endColor="#00141617"
+                android:startColor="#60141617" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -3,6 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blackish">#141617</color>
-    <color name="red">#b71c1c</color>
+    <color name="red">#ba2b2b</color>
     <color name="darkBlue">#121e2a</color>
+    <color name="lightred">#d27272</color>
+    <color name="darkerlightred">#c75050</color>
+    <color name="darkgray">#222222</color>
+    <color name="lightgray">#727272</color>
 </resources>

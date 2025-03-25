@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.ReelMatch" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.ReelMatch" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowBackground">@color/blackish</item>
         <item name="android:statusBarColor">@color/blackish</item>
         <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Base.Theme.ReelMatch" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/darkerlightred</item>
     </style>
 
 </resources>
