@@ -38,6 +38,11 @@ class SignupPage : Activity() {
                 return@setOnClickListener
             }
 
+            if (password.length < 8) {
+                Toast.makeText(this, "Password must be at least 8 characters long.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             if (password != confirmPassword) {
                 Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener

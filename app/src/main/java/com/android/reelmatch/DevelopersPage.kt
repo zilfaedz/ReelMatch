@@ -20,7 +20,6 @@ class DevelopersPage : Activity() {
         val instagramQuirante: Button = findViewById(R.id.instagram_quirante)
         val backButton : Button = findViewById(R.id.back_button)
         val homeButtom : Button = findViewById(R.id.home_button)
-        val bottomView : View = findViewById(R.id.bottom_view)
 
         facebookSalonga.setOnClickListener { openUrl("https://web.facebook.com/andre.salonga") }
         instagramSalonga.setOnClickListener { openUrl("https://www.instagram.com/andre.salonga") }

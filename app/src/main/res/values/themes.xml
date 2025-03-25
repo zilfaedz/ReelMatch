@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.ReelMatch" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.ReelMatch" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:windowBackground">@color/blackish</item>
         <item name="android:statusBarColor">@color/blackish</item>
         <item name="android:windowLightStatusBar">false</item>

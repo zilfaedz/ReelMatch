@@ -17,7 +17,7 @@
         android:fontFamily="@font/roboto_bold"
         android:textSize="30sp"
         android:textColor="#FFFF"
-        android:layout_marginTop="500dp"/>
+        android:layout_marginTop="600dp"/>
 
     <TextView
         android:layout_width="300dp"

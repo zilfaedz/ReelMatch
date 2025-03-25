@@ -3,110 +3,76 @@ package com.android.reelmatch
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 
 class ProfilePage : Activity() {
-
-    private lateinit var nameTextView: TextView
-    private lateinit var emailTextView: TextView
-    private lateinit var bioTextView: TextView
-    private lateinit var nameEditText: EditText
-    private lateinit var emailEditText: EditText
-    private lateinit var bioEditText: EditText
+    private lateinit var nameText: TextView
+    private lateinit var emailText: TextView
+    private lateinit var bioText: TextView
     private lateinit var editButton: Button
-    private lateinit var updateButton: Button
+    private lateinit var backButton: Button
+    private lateinit var profileImage: ImageView
 
-    private val PREFSNAME = "UserPrefs"
-    private val KEYNAME = "NAME"
-    private val KEYEMAIL = "EMAIL"
-    private val KEYBIO = "BIO"
+    companion object {
+        const val REQUEST_EDIT_PROFILE = 1
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_page)
 
-        nameTextView = findViewById(R.id.name_text)
-        emailTextView = findViewById(R.id.email_text)
-        bioTextView = findViewById(R.id.profile_bio)
-
-        nameEditText = findViewById(R.id.name_edit)
-        emailEditText = findViewById(R.id.email_edit)
-        bioEditText = findViewById(R.id.bio_edit)
-
+        nameText = findViewById(R.id.name_text)
+        emailText = findViewById(R.id.email_text)
+        bioText = findViewById(R.id.profile_bio)
         editButton = findViewById(R.id.edit_button)
-        updateButton = findViewById(R.id.update_button)
+        backButton = findViewById(R.id.back_button)
+        profileImage = findViewById(R.id.profile_icon)
 
-        loadProfileData()
+
+        val sharedPref = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        nameText.text = sharedPref.getString("NAME", "")
+        emailText.text = sharedPref.getString("EMAIL", "")
+        bioText.text = sharedPref.getString("BIO", "")
 
         editButton.setOnClickListener {
-            enableEditing()
+            val intent = Intent(this, ProfileSettingsPage::class.java)
+            intent.putExtra("NAME", nameText.text.toString())
+            intent.putExtra("EMAIL", emailText.text.toString())
+            intent.putExtra("BIO", bioText.text.toString())
+            startActivityForResult(intent, REQUEST_EDIT_PROFILE)
         }
 
-        updateButton.setOnClickListener {
-            saveChanges()
-        }
-
-        val backButton: Button = findViewById(R.id.back_button)
         backButton.setOnClickListener {
             val intent = Intent(this, DashboardPage::class.java)
             startActivity(intent)
         }
     }
 
-    private fun enableEditing() {
-        nameEditText.setText(nameTextView.text)
-        emailEditText.setText(emailTextView.text)
-        bioEditText.setText(bioTextView.text)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
-        nameTextView.visibility = View.GONE
-        emailTextView.visibility = View.GONE
-        bioTextView.visibility = View.GONE
+        if (requestCode == REQUEST_EDIT_PROFILE && resultCode == RESULT_OK && data != null) {
+            val newName = data.getStringExtra("NAME")
+            val newEmail = data.getStringExtra("EMAIL")
+            val newBio = data.getStringExtra("BIO")
+            val newProfileImageUri = data.getStringExtra("PROFILE_IMAGE_URI")
 
-        nameEditText.visibility = View.VISIBLE
-        emailEditText.visibility = View.VISIBLE
-        bioEditText.visibility = View.VISIBLE
+            nameText.text = newName ?: ""
+            emailText.text = newEmail ?: ""
+            bioText.text = newBio ?: ""
 
-        editButton.visibility = View.GONE
-        updateButton.visibility = View.VISIBLE
-    }
+            if (!newProfileImageUri.isNullOrEmpty()) {
+                val imageUri = Uri.parse(newProfileImageUri)
+                profileImage.setImageURI(imageUri)
 
-    private fun saveChanges() {
-        nameTextView.text = nameEditText.text.toString()
-        emailTextView.text = emailEditText.text.toString()
-        bioTextView.text = bioEditText.text.toString()
-
-        saveProfileData()
-
-        nameTextView.visibility = View.VISIBLE
-        emailTextView.visibility = View.VISIBLE
-        bioTextView.visibility = View.VISIBLE
-
-        nameEditText.visibility = View.GONE
-        emailEditText.visibility = View.GONE
-        bioEditText.visibility = View.GONE
-
-        editButton.visibility = View.VISIBLE
-        updateButton.visibility = View.GONE
-    }
-
-    private fun saveProfileData() {
-        val sharedPreferences = getSharedPreferences(PREFSNAME, Context.MODE_PRIVATE)
-        with(sharedPreferences.edit()) {
-            putString(KEYNAME, nameTextView.text.toString())
-            putString(KEYEMAIL, emailTextView.text.toString())
-            putString(KEYBIO, bioTextView.text.toString())
-            apply()
+                val sharedPref = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE).edit()
+                sharedPref.putString("PROFILE_IMAGE", newProfileImageUri)
+                sharedPref.apply()
+            }
         }
-    }
-
-    private fun loadProfileData() {
-        val sharedPreferences = getSharedPreferences(PREFSNAME, Context.MODE_PRIVATE)
-
-        nameTextView.text = sharedPreferences.getString(KEYNAME, "Your Name")
-        emailTextView.text = sharedPreferences.getString(KEYEMAIL, "your.email@example.com")
     }
 }

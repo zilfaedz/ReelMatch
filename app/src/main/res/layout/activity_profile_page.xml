@@ -32,14 +32,15 @@
             android:layout_below="@id/back_button"/>
 
         <!-- Profile Icon -->
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profile_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="159dp"
             android:layout_marginLeft="40dp"
             android:src="@drawable/profile_icon"
-            android:background="@drawable/circle"/>
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImageView"/>
 
         <!-- Name Text -->
         <TextView
@@ -53,22 +54,6 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto_boldcondensed" />
 
-        <!-- Editable Name -->
-        <EditText
-            android:id="@+id/name_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:visibility="gone"
-            android:layout_below="@id/background_holder"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:hint="Enter name"
-            android:background="@null"
-            android:fontFamily="@font/roboto_boldcondensed"
-            android:textColorHint="#808080"
-            android:textColor="@color/white"/>
-
         <!-- Email Text -->
         <TextView
             android:id="@+id/email_text"
@@ -79,22 +64,6 @@
             android:layout_below="@id/name_text"
             android:layout_marginLeft="150dp"
             android:fontFamily="@font/roboto_regular" />
-
-        <!-- Editable Email -->
-        <EditText
-            android:id="@+id/email_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:visibility="gone"
-            android:layout_below="@id/name_edit"
-            android:layout_marginLeft="150dp"
-            android:hint="Enter email"
-            android:background="@null"
-            android:inputType="textEmailAddress"
-            android:fontFamily="@font/roboto_regular"
-            android:textColorHint="#808080"
-            android:textColor="@color/white"/>
 
         <!-- Bio Label -->
         <TextView
@@ -119,7 +88,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/roboto_regular"
-            android:hint="Enter bio here"
             android:textColorHint="#808080"/>
 
         <!-- Edit Profile Button -->
@@ -135,38 +103,6 @@
             android:background="@drawable/button_rounded"
             android:fontFamily="@font/roboto_condensed"
             android:textAllCaps="false" />
-
-        <!-- Update Button -->
-        <Button
-            android:id="@+id/update_button"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Update"
-            android:textSize="13sp"
-            android:visibility="gone"
-            android:layout_below="@id/bio_edit"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/button_rounded"
-            android:fontFamily="@font/roboto_condensed"
-            android:textAllCaps="false" />
-
-        <!-- Editable Bio -->
-        <EditText
-            android:id="@+id/bio_edit"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:textSize="14sp"
-            android:layout_below="@id/bio_label"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:hint="Enter bio here"
-            android:textColorHint="#808080"
-            android:background="@null"
-            android:inputType="textMultiLine"
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/white"/>
 
         <!--Movie Rating Label-->
         <TextView

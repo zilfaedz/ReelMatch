@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReelMatch"
         tools:targetApi="34">
+
+        <activity
+            android:name=".ProfilePage"
+            android:exported="false" />
         <activity
             android:name=".ProfileSettingsPage"
             android:exported="false" />
@@ -26,25 +30,15 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".DevelopersPage" />
         <activity
             android:name=".LoginPage"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".SettingsPage"
-            android:exported="false" />
-        <activity
-            android:name=".ProfilePage"
             android:exported="false" />
     </application>
 
