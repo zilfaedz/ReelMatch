@@ -22,8 +22,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1000dp"
-            android:layout_marginTop="139dp"
+            android:layout_height="900dp"
+            android:layout_marginTop="200dp"
             android:background="@drawable/rounded_top_red"/>
 
         <ImageView
@@ -31,14 +31,14 @@
             android:layout_height="170dp"
             android:src="@drawable/pfp_background"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"/>
+            android:layout_marginTop="120dp"/>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/edit_profilepic"
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:layout_gravity="center"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="135dp"
             android:src="@drawable/profile_icon"
             android:scaleType="centerCrop"
             app:strokeColor="@android:color/white"
@@ -72,7 +72,8 @@
             android:textColorHint="#808080"
             android:layout_marginTop="15dp"
             android:layout_below="@id/text_firstname"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:inputType="text"/>
 
         <TextView
             android:id="@+id/text_lastname"
