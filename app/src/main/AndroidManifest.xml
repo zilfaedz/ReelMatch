@@ -40,6 +40,9 @@
         <activity
             android:name=".SettingsPage"
             android:exported="false" />
+
+        <activity android:name=".MovieDetail" />
+
     </application>
 
 </manifest>

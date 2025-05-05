@@ -4,9 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 
 class LoginPage : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +24,27 @@ class LoginPage : Activity() {
         val editEmail: EditText = findViewById(R.id.email_edit)
         val editPassword: EditText = findViewById(R.id.edit_password)
         val buttonLogin: Button = findViewById(R.id.login_button)
+        val togglePassword: ImageView = findViewById(R.id.password_toggle)
+
+        val customTypeface = ResourcesCompat.getFont(this, R.font.roboto_condensed)
+        editPassword.typeface = customTypeface
 
         intent.getStringExtra("EMAIL")?.let { editEmail.setText(it) }
         intent.getStringExtra("PASSWORD")?.let { editPassword.setText(it) }
+
+        var isPasswordVisible = false
+        togglePassword.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+            if (isPasswordVisible) {
+                editPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                togglePassword.setImageResource(R.drawable.opened_eye)
+            } else {
+                editPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                togglePassword.setImageResource(R.drawable.closed_eye)
+            }
+            editPassword.typeface = customTypeface
+            editPassword.setSelection(editPassword.text.length)
+        }
 
         if (isLoggedIn) {
             startActivity(Intent(this, DashboardPage::class.java))

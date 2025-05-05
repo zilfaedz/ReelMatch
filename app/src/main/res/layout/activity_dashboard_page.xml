@@ -7,17 +7,15 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/blackish">
 
-    <!-- Scrollable Content -->
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="56dp"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        android:fillViewport="true">
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
 
-        <LinearLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -117,40 +115,33 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- Buttons Below Content -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="27dp"
+                android:text="For You"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_boldcondensed"/>
+
             <LinearLayout
                 android:id="@+id/main2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="50dp">
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/profile"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
                     android:layout_height="wrap_content"
-                    android:text="Profile Page"
-                    android:textAllCaps="false"/>
+                    android:overScrollMode="never"
+                    android:paddingBottom="16dp" />
 
-                <Button
-                    android:id="@+id/developers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Developers Page"
-                    android:textAllCaps="false"/>
-
-                <Button
-                    android:id="@+id/settings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Settings Page"
-                    android:textAllCaps="false"/>
             </LinearLayout>
-
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-    <!-- Bottom Navigation (Fixed) -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"

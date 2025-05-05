@@ -3,10 +3,14 @@ package com.android.reelmatch
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 class SignupPage : Activity() {
@@ -20,6 +24,36 @@ class SignupPage : Activity() {
         val editPassword: EditText = findViewById(R.id.edit_password)
         val editConfirmPassword: EditText = findViewById(R.id.edit_confirmpassword)
         val signUpButton: Button = findViewById(R.id.signup_button)
+
+        val ruleLength: TextView = findViewById(R.id.rule_length)
+        val ruleUpper: TextView = findViewById(R.id.rule_uppercase)
+        val ruleSpecial: TextView = findViewById(R.id.rule_special)
+        val ruleNumber: TextView = findViewById(R.id.rule_number)
+
+        editPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                val input = s.toString()
+
+                ruleLength.setTextColor(
+                    if (input.length >= 8) Color.parseColor("#0e452c") else Color.parseColor("#BFFFFFFF")
+                )
+
+                ruleUpper.setTextColor(
+                    if (input.any { it.isUpperCase() }) Color.parseColor("#0e452c") else Color.parseColor("#BFFFFFFF")
+                )
+
+                ruleSpecial.setTextColor(
+                    if (input.any { "!@#\$%^&*()-_=+{}[]|:;\"'<>,.?/".contains(it) }) Color.parseColor("#0e452c")
+                    else Color.parseColor("#BFFFFFFF")
+                )
+
+                ruleNumber.setTextColor(
+                    if (input.any { it.isDigit() }) Color.parseColor("#0e452c") else Color.parseColor("#BFFFFFFF")
+                )
+            }
+        })
 
         signUpButton.setOnClickListener {
             val firstName = editFirstName.text.toString().trim()
@@ -38,8 +72,8 @@ class SignupPage : Activity() {
                 return@setOnClickListener
             }
 
-            if (password.length < 8) {
-                Toast.makeText(this, "Password must be at least 8 characters long.", Toast.LENGTH_SHORT).show()
+            if (!isValidPassword(password)) {
+                Toast.makeText(this, "Password must be at least 8 characters, include one uppercase letter, one special character, and one number.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -53,7 +87,7 @@ class SignupPage : Activity() {
                 putString("NAME", "$firstName $lastName")
                 putString("EMAIL", email)
                 putString("PASSWORD", password)
-                putBoolean("isLoggedIn", false) // Prevent auto-login
+                putBoolean("isLoggedIn", false)
                 apply()
             }
 
@@ -71,5 +105,10 @@ class SignupPage : Activity() {
             val intent = Intent(this, LoginPage::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun isValidPassword(password: String): Boolean {
+        val regex = Regex("^(?=.*[A-Z])(?=.*[!@#\$%^&*()_+\\-\\[\\]{};':\"\\\\|,.<>/?])(?=.*\\d).{8,}$")
+        return password.matches(regex)
     }
 }
