@@ -12,7 +12,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReelMatch"
         tools:targetApi="34">
-
+        <activity
+            android:name=".MysteryPage"
+            android:exported="false" />
+        <activity
+            android:name=".FantasyPage"
+            android:exported="false" />
+        <activity
+            android:name=".ScifiPage"
+            android:exported="false" />
+        <activity
+            android:name=".FamilyPage"
+            android:exported="false" />
+        <activity
+            android:name=".HorrorPage"
+            android:exported="false" />
+        <activity
+            android:name=".ActionPage"
+            android:exported="false" />
+        <activity
+            android:name=".RomancePage"
+            android:exported="false" />
+        <activity
+            android:name=".SeriesPage"
+            android:exported="false" />
+        <activity
+            android:name=".AnimePage"
+            android:exported="false" />
+        <activity
+            android:name=".DocumentaryPage"
+            android:exported="false" />
+        <activity
+            android:name=".PopularPage"
+            android:exported="false" />
         <activity
             android:name=".ProfilePage"
             android:exported="false" />
@@ -30,6 +62,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -40,9 +73,7 @@
         <activity
             android:name=".SettingsPage"
             android:exported="false" />
-
         <activity android:name=".MovieDetail" />
-
     </application>
 
 </manifest>

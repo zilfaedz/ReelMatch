@@ -9,4 +9,5 @@
     <color name="darkerlightred">#c75050</color>
     <color name="darkgray">#222222</color>
     <color name="lightgray">#727272</color>
+    <color name="transparent_gray">#808080</color>
 </resources>

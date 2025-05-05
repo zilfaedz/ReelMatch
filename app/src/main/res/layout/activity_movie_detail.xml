@@ -1,62 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp">
 
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/backbutton_icon"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"/>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/movie_image"
-        android:layout_width="180dp"
-        android:layout_height="240dp"
-        android:src="@drawable/mamma"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/RoundedImage"
-        android:layout_gravity="center"/>
-
-    <TextView
-        android:id="@+id/movie_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Movie Title"
-        android:textSize="17sp"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/roboto_boldcondensed" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="20dp">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/star_img"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0.0"
-            android:textSize="13sp"
-            android:textColor="@color/white"
-            android:gravity="center"
-            android:fontFamily="@font/roboto_boldcondensed" />
-    </LinearLayout>
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/backbutton_icon"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/movie_image"
+                android:layout_width="180dp"
+                android:layout_height="240dp"
+                android:src="@drawable/mamma"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/RoundedImage"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/movie_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movie Title"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_boldcondensed" />
+
+            <TextView
+                android:id="@+id/movie_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movie Year"
+                android:textSize="20sp"
+                android:textColor="@color/transparent_gray"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_condensed" />
+
+            <TextView
+                android:id="@+id/movie_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movie Director"
+                android:textSize="20sp"
+                android:textColor="@color/transparent_gray"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_condensed" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/star_img"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_boldcondensed" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:background="@color/transparent_gray"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/movie_description"
+                android:layout_width="350dp"
+                android:layout_marginBottom="30dp"
+                android:layout_height="wrap_content"
+                android:text="          Armed with only one word—Tenet—and fighting for the survival of the world, a protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time."
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/roboto_condensed"
+                android:lineSpacingExtra="3dp"/>
+
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:background="@color/transparent_gray"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cast"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="150dp"
+                android:fontFamily="@font/roboto_condensed" />
+
+            <LinearLayout
+                android:id="@+id/cast_container"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
